@@ -116,7 +116,7 @@ section header{
 #check:checked ~ section{
 	margin-left: 250px;
 }
-.side-barP{
+.side-bar{
   position: fixed;
 }
 

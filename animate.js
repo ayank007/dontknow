@@ -35,38 +35,40 @@ $(function() {
 })
 
 $(function(){
-	var voiceList=$("#voiceList")
-	var txtip=$("#txtip")
-	var speak=$("#speak")
-	var tts=window.speechSynthesis
-	var voices=[]
-	function GetVoices(){
-		voices=tts.getVoices();
-		voiceList.innerHTML=''
-		voices.forEach((voice) => {
-			var listItem = document.createElement('option')
-			listItem.textContent=voice.name
-			listItem.setAttribute('data-lang', voice.lang)
-			listItem.setAttribute('data-lang',voice.name)
-			voiceList.append(listItem)
-		})
-	}
-	GetVoices()
-	if(speechSynthesis!==undefined){
-		speechSynthesis.onVoiceChanged=GetVoices
-		speak.addEventListner('click',()=>{
-			var toSpeak=new speechSynthesisUtterance(txt.value)
-			var selectedVoiceName=voiceList.selectedOption[0].getAttribute('data-name')
-			voices.forEach((voice)=>{
-				if(voice.name===selectedVoiceName){
-					toSpeak.voice=voice
-				}
-			})
-			tts.speak(toSpeak)
-		})
-	}
-})
+	var txtInput = document.querySelector('#txtInput');
+    var voiceList = document.querySelector('#voiceList');
+    var btnSpeak = document.querySelector('#btnSpeak');
+    var synth = window.speechSynthesis;
+    var voices = [];
 
-$(function(){
-	$('.side-bar').theiaStickySidebar()
+    PopulateVoices();
+    if(speechSynthesis !== undefined){
+        speechSynthesis.onvoiceschanged = PopulateVoices;
+    }
+
+    btnSpeak.addEventListener('click', ()=> {
+        var toSpeak = new SpeechSynthesisUtterance(txtInput.value);
+        var selectedVoiceName = voiceList.selectedOptions[0].getAttribute('data-name');
+        voices.forEach((voice)=>{
+            if(voice.name === selectedVoiceName){
+                toSpeak.voice = voice;
+            }
+        });
+        synth.speak(toSpeak);
+    });
+
+    function PopulateVoices(){
+        voices = synth.getVoices();
+        var selectedIndex = voiceList.selectedIndex < 0 ? 0 : voiceList.selectedIndex;
+        voiceList.innerHTML = '';
+        voices.forEach((voice)=>{
+            var listItem = document.createElement('option');
+            listItem.textContent = voice.name;
+            listItem.setAttribute('data-lang', voice.lang);
+            listItem.setAttribute('data-name', voice.name);
+            voiceList.appendChild(listItem);
+        });
+
+        voiceList.selectedIndex = selectedIndex;
+    }
 })
