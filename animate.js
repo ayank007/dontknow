@@ -1,4 +1,5 @@
 $(function() {
+	alert("lets strat")
 	var video=''
 	var API_KEY="AIzaSyAa5FpvRztobLfeH8Snx7BOZCsyonOi_Xk"
 	$("#ff").submit(function(event){
