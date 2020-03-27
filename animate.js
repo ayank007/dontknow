@@ -1,14 +1,14 @@
 $(function() {
 	var video=''
 	var API_KEY="AIzaSyAa5FpvRztobLfeH8Snx7BOZCsyonOi_Xk"
-	$("form").submit(function(event){
+	$("#ff").submit(function(event){
 		event.preventDefault()
+		alert("DO")
 		var search=$("#search").val()
 		videoSearch(API_KEY, search, 15)
 	})
 
 	function videoSearch(key, search, n){
-		$("#videos").empty()
 		$.get("https://www.googleapis.com/youtube/v3/search?key"+key+"&type=video&part=snippet&maxResults="+n+"&q="+search, function(data){
 			data.items.forEach(item => {
 				video = `
@@ -17,11 +17,11 @@ $(function() {
 						height="315"
 						src="http://www.youtube.com/embed/${item.id.videoId}"
 						frameborder="0"
-						allowFullScreen>
+						allowfullscreen>
 					</iframe>
 				`
 				$("#videos").append(video)
-			})
+			});
 		})
 		
 		
