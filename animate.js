@@ -15,7 +15,8 @@ $(function() {
 			"&type=video&part=snippet&maxResults="
 			+n+
 			"&q="
-			+search, function(data){
+			+search,function(data){
+				console.log(data)
 				data.items.forEach(item => {
 					video = `
 						<iframe
