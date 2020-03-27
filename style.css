@@ -119,9 +119,35 @@ section header{
 .side-bar{
   position: fixed;
 }
+footer {
+  clear: both;
+  background: #cc9;
+  height: 500px;
+  text-align:center;
+  font-size:60px;
+  line-height:6em;
+}
 
-
-
+#sticky {
+  background: #C00003;
+  color: #eee;
+  width: 240px;
+  height: 410px;
+  margin-top:10px;
+  text-align:center;
+  font-size:22px;
+  line-height:14em;
+}
+#not-sticky {
+  background: #2B9400;
+  color: #eee;
+  width: 240px;
+  height: 110px;
+  margin-bottom: 10px;
+  text-align:center;
+  font-size:22px;
+  line-height:4em;
+}
 
 
 
