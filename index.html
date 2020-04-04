@@ -21,68 +21,84 @@
 				<li><a href="#"><i class="fas fa-bell"></i> Notification</a></li>
 				<li><a href="#"><i class="fas fa-box-open"></i> Storage</a></li>
 				<li><a href="#"><i class="fas fa-question"></i> About</a></li>
-				<li><a href="#"><i class="fas fa-font"></i></a></li>
+				<li><a href="#footer"><i class="fas fa-font"></i></a></li>
 			</ul>
 		</div>	
 		<section>
+			<div id="hi">
+				<img src="bg.jpg" id="bg">
+				<img src="moon.png" id="moon">
+				<img src="mountain.jpg" id="mountain">
+				<img src="road.jpg" id="road">
+				<span id="text">Welcome</span>			
+			</div>
 			<header><span>Welcome to my project</span></header>
-			<div class="row">
-				<div class="col-md-7">
-					<form id="ff">
-						<input type="text" class="form-control" id="search">
-						<input type="submit" value="search">
-					</form>
-					<div class="row">
-						<div class="col-md-12">
-							<div id="videos"></div>
+			<div id="main">
+				<div class="storyBx">
+					<div>
+						<form id="ff">
+							<input type="text" class="form-control" id="search"/>
+							<button id="submit">Submit</button> 
+						</form>
+						<div id="videos"></div>
+						<div class="row">
+							<div class="col-md-12">
+								Select Voice: <select id='voiceList'></select><br>
+							    <input id='txtInput' /> <br><br>    
+							    <button id='btnSpeak'>Speak!</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<label for="Speech Recognition">Speech Recognition</label>
+	    						<input type="text" name="" id="speechToText" placeholder="Speak Something" onclick="record()">
+							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-12">
-							Select Voice: <select id='voiceList'></select><br>
-						    <input id='txtInput' /> <br><br>    
-						    <button id='btnSpeak'>Speak!</button>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<label for="Speech Recognition">Speech Recognition</label>
-    						<input type="text" name="" id="speechToText" placeholder="Speak Something" onclick="record()">
-						</div>
-					</div>
-										What is a paragraph?
-					A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument.
+					<p>
+											What is a paragraph?
+						A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument.
 
-					How do I unify my ideas in a paragraph?
-					Probably the most effective way to achieve paragraph unity is to express the central idea of the paragraph in a topic sentence.
+						How do I unify my ideas in a paragraph?
+						Probably the most effective way to achieve paragraph unity is to express the central idea of the paragraph in a topic sentence.
 
-					Topic sentences are similar to mini thesis statements. Like a thesis statement, a topic sentence has a specific main point. Whereas the thesis is the main point of the essay, the topic sentence is the main point of the paragraph. Like the thesis statement, a topic sentence has a unifying function. But a thesis statement or topic sentence alone doesn’t guarantee unity. An essay is unified if all the paragraphs relate to the thesis, whereas a paragraph is unified if all the sentences relate to the topic sentence. Note: Not all paragraphs need topic sentences. In particular, opening and closing paragraphs, which serve different functions from body paragraphs, generally don’t have topic sentences.
+						Topic sentences are similar to mini thesis statements. Like a thesis statement, a topic sentence has a specific main point. Whereas the thesis is the main point of the essay, the topic sentence is the main point of the paragraph. Like the thesis statement, a topic sentence has a unifying function. But a thesis statement or topic sentence alone doesn’t guarantee unity. An essay is unified if all the paragraphs relate to the thesis, whereas a paragraph is unified if all the sentences relate to the topic sentence. Note: Not all paragraphs need topic sentences. In particular, opening and closing paragraphs, which serve different functions from body paragraphs, generally don’t have topic sentences.
 
-					In academic writing, the topic sentence nearly always works best at the beginning of a paragraph so that the reader knows what to expect:
+						In academic writing, the topic sentence nearly always works best at the beginning of a paragraph so that the reader knows what to expect:
 
-					The embrace of Twitter by politicians and journalists has been one of its most notable features in recent years: for both groups the use of Twitter is becoming close to a requirement.
+						The embrace of Twitter by politicians and journalists has been one of its most notable features in recent years: for both groups the use of Twitter is becoming close to a requirement.
 
-					—Paul Bernal, “A Defence of Responsible Tweeting”
+						—Paul Bernal, “A Defence of Responsible Tweeting”
 
-					This topic sentence forecasts the central idea or main point of the paragraph: “politicians” and “journalists” rely on Twitter. The rest of the paragraph will focus on these two Twitter-user groups, thereby fulfilling the promise made by the topic sentence. By avoiding irrelevant information that does not relate to the topic sentence, you can compose a unified paragraph.
+						This topic sentence forecasts the central idea or main point of the paragraph: “politicians” and “journalists” rely on Twitter. The rest of the paragraph will focus on these two Twitter-user groups, thereby fulfilling the promise made by the topic sentence. By avoiding irrelevant information that does not relate to the topic sentence, you can compose a unified paragraph.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
 				</div>
-				<div class="col-md-5">
-					<div id="sidebar">
-						<div id="not-sticky">Regular Riv</div>
-						<div id="sticky">Sticky Div</div>
-					</div>				
+				<div class="sidebar">
+					<!-- <img src="bg.jpg"> -->
 				</div>
 			</div>
+			<footer id="footer">
+				Website made with love.
+			</footer>
 		</section>
-		<footer></footer>
 		
-	</body>
-	<script src="https://kit.fontawesome.com/a9ba462570.js" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		
+
+		<script src="https://kit.fontawesome.com/a9ba462570.js" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script
 		  src="https://code.jquery.com/jquery-3.4.1.js"
 		  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
 		  crossorigin="anonymous">
   		</script>
 		<script type="text/javascript" src="animate.js"></script>
+
+	</body>
+	
 </html>

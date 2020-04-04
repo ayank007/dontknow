@@ -1,13 +1,21 @@
 $(function() {
-	alert("lets strat")
-	var video=''
-	var API_KEY="AIzaSyAa5FpvRztobLfeH8Snx7BOZCsyonOi_Xk"
-	$("#ff").submit(function(event){
-		event.preventDefault()
-		alert("DO")
-		var search=$("#search").val()
-		videoSearch(API_KEY, search, 15)
-	})
+	alert("lets strat");
+	var video='';
+	var API_KEY="AIzaSyAa5FpvRztobLfeH8Snx7BOZCsyonOi_Xk";
+	//var ff=document.querySelector("#ff");
+	//ff.submit(function(event){
+		// event.preventDefault();
+		//alert("DO");
+		// var search=document.querySelector("#search").val();
+		// videoSearch(API_KEY, search, 4);
+	//});
+	var search=document.querySelector('#search').value;
+	var ytb=document.querySelector('#submit');
+	ytb.addEventListener('click', ()=> {
+		alert(search);
+		videoSearch(API_KEY, search, 4);
+	});
+
 
 	function videoSearch(key, search, n){
 		$.get("https://www.googleapis.com/youtube/v3/search?key="
@@ -16,17 +24,18 @@ $(function() {
 			+n+
 			"&q="
 			+search,function(data){
-				console.log(data)
+				console.log(data);
 				data.items.forEach(item => {
 					video = `
 					
 					<iframe	width="420" height="315" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
 					
 					`
-					$("#videos").append(video)
+					var videos=document.querySelector("#videos");
+					videos.append(video);
 				});
 			}
-		)
+		);
 	}
 })
 
@@ -68,32 +77,18 @@ $(function(){
         voiceList.selectedIndex = selectedIndex;
     }
 })
-$(function() { // document ready
-	if ($('#sticky').length) { // make sure "#sticky" element exists
-		var el = $('#sticky');
-		var stickyTop = $('#sticky').offset().top; // returns number
-		var stickyHeight = $('#sticky').height();
 
-		$(window).scroll(function() { // scroll event
-			var limit = $('#footer').offset().top - stickyHeight - 20;
-
-			var windowTop = $(window).scrollTop(); // returns number
-
-			if (stickyTop < windowTop) {
-				el.css({
-					position: 'fixed',
-					top: 0
-				});
-			} else {
-				el.css('position', 'static');
-			}
-
-			if (limit < windowTop) {
-				var diff = limit - windowTop;
-				el.css({
-					top: diff
-				});
-			}
-		});
-	}
-});
+$(function() {
+	var bg=document.querySelector("#bg");
+	var mountain=document.querySelector("#mountain");
+	var moon=document.querySelector("#moon");
+	var road=document.querySelector("#road");
+	var text=document.querySelector("#text");
+	window.addEventListener('scroll',function(){
+		var value=window.scrollY;
+		bg.style.top=value*0.5+'px';
+		moon.style.left=-value*0.5+'px';
+		mountain.style.top=-value*0.5+'px';
+		road.style.top=value*1+'px';
+	});
+})
