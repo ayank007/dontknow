@@ -2,13 +2,6 @@ $(function() {
 	alert("lets strat");
 	var video='';
 	var API_KEY="AIzaSyAa5FpvRztobLfeH8Snx7BOZCsyonOi_Xk";
-	//var ff=document.querySelector("#ff");
-	//ff.submit(function(event){
-		// event.preventDefault();
-		//alert("DO");
-		// var search=document.querySelector("#search").val();
-		// videoSearch(API_KEY, search, 4);
-	//});
 	var search=document.querySelector('#search').value;
 	var ytb=document.querySelector('#submit');
 	ytb.addEventListener('click', ()=> {
@@ -31,12 +24,23 @@ $(function() {
 					<iframe	width="420" height="315" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
 					
 					`
+					//<iframe width="420" height="315" src="http://www.youtube.com/embed/oD04nZZVwWg" frameborder="0" allowfullscreen></iframe>
 					var videos=document.querySelector("#videos");
 					videos.append(video);
 				});
 			}
 		);
 	}
+
+	// 	var xhr = new XMLHttpRequest();
+	// xhr.open("GET",' https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=query&key=yourAPIkey', false);
+	//   xhr.setRequestHeader( 'Content-Type', 'application/json' );
+	//   xhr.setRequestHeader( 'charset', 'utf-8' );
+	//     xhr.setRequestHeader( 'Access-Control-Allow-Origin', '*');
+	//   xhr.setRequestHeader( 'Accept-Language', '*');
+	//    xhr.send(null);
+	//    xhr_objct = JSON.parse(xhr.responseText);
+
 })
 
 $(function(){
@@ -88,7 +92,10 @@ $(function() {
 		var value=window.scrollY;
 		bg.style.top=value*0.5+'px';
 		moon.style.left=-value*0.5+'px';
-		mountain.style.top=-value*0.5+'px';
-		road.style.top=value*1+'px';
+		mountain.style.top=-value*0.15+'px';
+		road.style.top=value*0.15+'px';
+		text.style.top=value*1+'px';
 	});
 })
+
+
