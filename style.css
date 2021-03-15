@@ -67,6 +67,9 @@ html{
 	display: none;
 	position: fixed;
 }
+label{
+	position:absolute;
+}
 label #open{
 	position: fixed;
 	cursor: pointer;
